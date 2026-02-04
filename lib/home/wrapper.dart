@@ -10,9 +10,9 @@ class Wrapper extends StatefulWidget {
 }
 
 class _WrapperState extends State<Wrapper> {
-  bool authenticate = true;
+  bool authenticated = false;
   @override
   Widget build(BuildContext context) {
-    return authenticate ? HomePage() : Authentication();
+    return authenticated ? HomePage() : Authentication();
   }
 }

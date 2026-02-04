@@ -1,7 +1,12 @@
 import 'package:brew_crew/home/wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyAPP());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyAPP());
+}
 
 class MyAPP extends StatelessWidget {
   const MyAPP({super.key});
@@ -11,7 +16,7 @@ class MyAPP extends StatelessWidget {
     return MaterialApp(
       title: 'Brew Crew',
       theme: ThemeData(primarySwatch: Colors.brown),
-      home: Wrapper(),
+      home: const Wrapper(),
     );
   }
 }
